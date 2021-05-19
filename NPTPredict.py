@@ -37,7 +37,7 @@ SL_BHA = st.sidebar.slider(
 
 SL_MW = st.sidebar.slider(
     'Peso Del Lodo (ppg)',
-    0.0, 20.0, 10.0
+    3.0, 20.0, 9.8
     )
 
 Duracion = st.sidebar.number_input('Numero de Dias Planeados Para El Pozo',
