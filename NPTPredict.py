@@ -9,8 +9,8 @@ DATA_URL = "https://raw.githubusercontent.com/diegojeda/Prediccion-NPT/main/Base
 
 st.title("Dashboard Para Prediccion")
 st.header("Horas De NPT Al Perforar Un Pozo En Campo Reds")
-st.markdown("""Esta aplicacion te permite generar una prediccion de las horas de NPT que tendrá un pozo perforado en el campo Reds,
-            teniendo en cuenta parámetros direccionales, de fluidos, tipo de pozo y duracion planeada""")
+st.markdown("""Esta aplicación te permite generar una predicción de las horas de NPT que tendrá un pozo perforado en el campo Reds,
+            teniendo en cuenta parámetros direccionales, de fluidos, tipo de pozo y duración planeada""")
 
 @st.cache
 def load_data():
@@ -23,7 +23,7 @@ data=load_data()
 image1 = Image.open('Halliburton.jpg')
 st.sidebar.image(image1)
 
-st.sidebar.title("Selecciona Los Parametros De Su Pozo")
+st.sidebar.title("Selecciona Los Parámetros De Su Pozo")
 
 SB_Pozo = st.sidebar.selectbox(
     'Tipo De Pozo',
@@ -36,11 +36,11 @@ SL_BHA = st.sidebar.slider(
     )
 
 SL_MW = st.sidebar.slider(
-    'Peso Del Lodo (ppg)',
+    'Media Del Peso Del Lodo Durante La Perforación Del Pozo(ppg)',
     3.0, 20.0, 9.8
     )
 
-Duracion = st.sidebar.number_input('Numero de Dias Planeados Para El Pozo',
+Duracion = st.sidebar.number_input('Numero de Días Planeados Para El Pozo',
                                    min_value=1,value=10,max_value=50)
     
 MD = st.sidebar.number_input('MD (ft) Final Del Pozo',
@@ -55,10 +55,10 @@ DLS_Mean = st.sidebar.number_input('DLS Medio De Todo El Pozo (Deg/100 ft)',
 Azi_Mean = st.sidebar.number_input('Azimuth Medio De Todo El Pozo (Deg)',
                                    min_value=0,value=300,max_value=360)
 
-Azi_Max = st.sidebar.number_input('Azimuth Maximo De Todo El Pozo (Deg)',
+Azi_Max = st.sidebar.number_input('Azimuth Máximo De Todo El Pozo (Deg)',
                                   min_value=0,value=300,max_value=360)
 
-Inc_Max = st.sidebar.number_input('Inclinacion Maxima De Todo El Pozo (Deg)',
+Inc_Max = st.sidebar.number_input('Inclinacion Máxima De Todo El Pozo (Deg)',
                                   min_value=0,value=3,max_value=100)
 
 
